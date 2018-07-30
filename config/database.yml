@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  port: 5432
+  username: postgres
+  password: Sistema@brs2576
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: prosas_production
+
+test:
+  <<: *default
+  database: prosas_production
+
+production:
+  <<: *default
+  database: prosas_production
+#  password: <%= ENV['prosas_DATABASE_PASSWORD'] %>
